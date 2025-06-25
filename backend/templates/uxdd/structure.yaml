@@ -1,0 +1,319 @@
+uxdd_template:
+  version: "1.0"
+  title: "UX Design Document"
+  description: "Comprehensive UX design specifications and guidelines"
+  
+  sections:
+    - id: "design_overview"
+      title: "Design Overview"
+      required: true
+      order: 1
+      description: "High-level design vision and approach"
+      questions:
+        - id: "uxdd_do_1"
+          content: "What is the overall design vision for this product?"
+          type: "template"
+          required: true
+        - id: "uxdd_do_2"
+          content: "What design principles will guide the UX?"
+          type: "template"
+          required: true
+        - id: "uxdd_do_3"
+          content: "What is the primary user interface paradigm? (web, mobile, desktop, etc.)"
+          type: "template"
+          required: true
+          options: ["Web Application", "Mobile App (iOS)", "Mobile App (Android)", "Desktop Application", "Responsive Web", "Progressive Web App", "Multi-platform"]
+        - id: "uxdd_do_4"
+          content: "What emotional response should the design evoke?"
+          type: "template"
+          required: false
+    
+    - id: "user_research"
+      title: "User Research"
+      required: true
+      order: 2
+      description: "Research findings and user insights"
+      questions:
+        - id: "uxdd_ur_1"
+          content: "What user research has been conducted?"
+          type: "template"
+          required: true
+        - id: "uxdd_ur_2"
+          content: "What are the key user pain points discovered?"
+          type: "template"
+          required: true
+        - id: "uxdd_ur_3"
+          content: "What are the user goals and motivations?"
+          type: "template"
+          required: true
+        - id: "uxdd_ur_4"
+          content: "What are the user behavior patterns?"
+          type: "template"
+          required: false
+    
+    - id: "user_personas"
+      title: "User Personas"
+      required: true
+      order: 3
+      description: "Detailed user personas"
+      dynamic: true
+      questions:
+        - id: "uxdd_up_1"
+          content: "Describe the primary user persona (demographics, goals, frustrations)"
+          type: "template"
+          required: true
+        - id: "uxdd_up_2"
+          content: "What are the secondary user personas?"
+          type: "template"
+          required: false
+        - id: "uxdd_up_3"
+          content: "What are the key differences between personas?"
+          type: "template"
+          required: false
+        - id: "uxdd_up_4"
+          content: "How do personas influence design decisions?"
+          type: "dynamic"
+          required: true
+    
+    - id: "user_journeys"
+      title: "User Journey Maps"
+      required: true
+      order: 4
+      description: "User journey maps for key workflows"
+      questions:
+        - id: "uxdd_uj_1"
+          content: "What are the primary user journeys?"
+          type: "template"
+          required: true
+        - id: "uxdd_uj_2"
+          content: "What are the key touchpoints in each journey?"
+          type: "dynamic"
+          required: true
+        - id: "uxdd_uj_3"
+          content: "What are the pain points in the current journey?"
+          type: "template"
+          required: true
+        - id: "uxdd_uj_4"
+          content: "What are the opportunities for improvement?"
+          type: "template"
+          required: false
+    
+    - id: "information_architecture"
+      title: "Information Architecture"
+      required: true
+      order: 5
+      description: "Structure and organization of information"
+      questions:
+        - id: "uxdd_ia_1"
+          content: "How will information be organized and structured?"
+          type: "template"
+          required: true
+        - id: "uxdd_ia_2"
+          content: "What is the navigation structure?"
+          type: "template"
+          required: true
+        - id: "uxdd_ia_3"
+          content: "What are the main sections/areas of the application?"
+          type: "template"
+          required: true
+        - id: "uxdd_ia_4"
+          content: "How will users find what they're looking for?"
+          type: "template"
+          required: true
+        - id: "uxdd_ia_5"
+          content: "What is the content hierarchy?"
+          type: "template"
+          required: false
+    
+    - id: "interaction_design"
+      title: "Interaction Design"
+      required: true
+      order: 6
+      description: "Interaction patterns and behaviors"
+      subsections:
+        - id: "interaction_patterns"
+          title: "Interaction Patterns"
+          questions:
+            - id: "uxdd_ip_1"
+              content: "What are the primary interaction patterns?"
+              type: "template"
+              required: true
+            - id: "uxdd_ip_2"
+              content: "How will users interact with key features?"
+              type: "template"
+              required: true
+            - id: "uxdd_ip_3"
+              content: "What gestures or shortcuts will be supported?"
+              type: "template"
+              required: false
+        
+        - id: "micro_interactions"
+          title: "Micro-interactions"
+          questions:
+            - id: "uxdd_mi_1"
+              content: "What micro-interactions will enhance the experience?"
+              type: "template"
+              required: false
+            - id: "uxdd_mi_2"
+              content: "How will the system provide feedback to user actions?"
+              type: "template"
+              required: true
+            - id: "uxdd_mi_3"
+              content: "What loading and transition states are needed?"
+              type: "template"
+              required: true
+    
+    - id: "visual_design"
+      title: "Visual Design"
+      required: true
+      order: 7
+      description: "Visual design guidelines and specifications"
+      subsections:
+        - id: "design_system"
+          title: "Design System"
+          questions:
+            - id: "uxdd_ds_1"
+              content: "What design system or framework will be used?"
+              type: "template"
+              required: true
+            - id: "uxdd_ds_2"
+              content: "What is the color palette?"
+              type: "template"
+              required: true
+            - id: "uxdd_ds_3"
+              content: "What typography will be used?"
+              type: "template"
+              required: true
+            - id: "uxdd_ds_4"
+              content: "What is the spacing/grid system?"
+              type: "template"
+              required: true
+        
+        - id: "component_library"
+          title: "Component Library"
+          questions:
+            - id: "uxdd_cl_1"
+              content: "What are the core UI components needed?"
+              type: "template"
+              required: true
+            - id: "uxdd_cl_2"
+              content: "How will components maintain consistency?"
+              type: "template"
+              required: true
+            - id: "uxdd_cl_3"
+              content: "What are the component states and variations?"
+              type: "template"
+              required: false
+    
+    - id: "wireframes"
+      title: "Wireframes and Mockups"
+      required: true
+      order: 8
+      description: "Key screens and layouts"
+      questions:
+        - id: "uxdd_wf_1"
+          content: "What are the key screens that need to be designed?"
+          type: "template"
+          required: true
+        - id: "uxdd_wf_2"
+          content: "Describe the layout for the main dashboard/home screen"
+          type: "template"
+          required: true
+        - id: "uxdd_wf_3"
+          content: "What are the responsive breakpoints?"
+          type: "template"
+          required: true
+        - id: "uxdd_wf_4"
+          content: "How will the design adapt to different screen sizes?"
+          type: "template"
+          required: true
+    
+    - id: "accessibility"
+      title: "Accessibility"
+      required: true
+      order: 9
+      description: "Accessibility requirements and guidelines"
+      questions:
+        - id: "uxdd_acc_1"
+          content: "What WCAG level will be targeted? (A, AA, AAA)"
+          type: "template"
+          required: true
+          options: ["WCAG 2.1 Level A", "WCAG 2.1 Level AA", "WCAG 2.1 Level AAA", "WCAG 3.0"]
+        - id: "uxdd_acc_2"
+          content: "How will the design support screen readers?"
+          type: "template"
+          required: true
+        - id: "uxdd_acc_3"
+          content: "What keyboard navigation will be supported?"
+          type: "template"
+          required: true
+        - id: "uxdd_acc_4"
+          content: "How will color contrast requirements be met?"
+          type: "template"
+          required: true
+        - id: "uxdd_acc_5"
+          content: "What alternative text strategies will be used?"
+          type: "template"
+          required: false
+    
+    - id: "usability_testing"
+      title: "Usability Testing"
+      required: false
+      order: 10
+      description: "Usability testing plans and criteria"
+      questions:
+        - id: "uxdd_ut_1"
+          content: "What usability testing will be conducted?"
+          type: "template"
+          required: false
+        - id: "uxdd_ut_2"
+          content: "What are the key tasks to test?"
+          type: "template"
+          required: false
+        - id: "uxdd_ut_3"
+          content: "What are the success metrics?"
+          type: "template"
+          required: false
+        - id: "uxdd_ut_4"
+          content: "How will feedback be incorporated?"
+          type: "template"
+          required: false
+    
+    - id: "design_handoff"
+      title: "Design Handoff"
+      required: true
+      order: 11
+      description: "Specifications for development handoff"
+      questions:
+        - id: "uxdd_dh_1"
+          content: "What design tools will be used for handoff?"
+          type: "template"
+          required: true
+          options: ["Figma", "Sketch", "Adobe XD", "Framer", "Other"]
+        - id: "uxdd_dh_2"
+          content: "What assets need to be provided to developers?"
+          type: "template"
+          required: true
+        - id: "uxdd_dh_3"
+          content: "What are the design specifications (spacing, sizing, etc.)?"
+          type: "template"
+          required: true
+        - id: "uxdd_dh_4"
+          content: "How will design updates be communicated?"
+          type: "template"
+          required: false
+
+# Validation rules
+validation_rules:
+  - all_required_sections_present: true
+  - minimum_questions_answered_per_section: 0.8
+  - personas_minimum: 1
+  - user_journeys_minimum: 1
+  - accessibility_compliance: true
+  - responsive_design_specified: true
+
+# Document relationships
+relationships:
+  derives_from: ["user_research", "brd", "prd"]
+  informs: ["wireframe_doc", "design_requirements", "frontend_development"]
+  references: ["brand_guidelines", "design_system", "competitor_analysis"]

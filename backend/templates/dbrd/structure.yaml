@@ -1,0 +1,291 @@
+dbrd_template:
+  version: "1.0"
+  title: "Database Requirements Document"
+  description: "Comprehensive database requirements and specifications"
+  
+  sections:
+    - id: "database_overview"
+      title: "Database Overview"
+      required: true
+      order: 1
+      description: "High-level database requirements and objectives"
+      questions:
+        - id: "dbrd_do_1"
+          content: "What is the primary purpose of the database?"
+          type: "template"
+          required: true
+        - id: "dbrd_do_2"
+          content: "What database management system (DBMS) will be used?"
+          type: "template"
+          required: true
+          options: ["PostgreSQL", "MySQL", "MongoDB", "SQL Server", "Oracle", "DynamoDB", "Cassandra", "Redis", "Elasticsearch", "Other"]
+        - id: "dbrd_do_3"
+          content: "What are the key database requirements?"
+          type: "template"
+          required: true
+        - id: "dbrd_do_4"
+          content: "What is the expected database size and growth rate?"
+          type: "template"
+          required: true
+    
+    - id: "data_requirements"
+      title: "Data Requirements"
+      required: true
+      order: 2
+      description: "Types of data and storage requirements"
+      questions:
+        - id: "dbrd_dr_1"
+          content: "What types of data will be stored?"
+          type: "template"
+          required: true
+        - id: "dbrd_dr_2"
+          content: "What is the expected data volume for each type?"
+          type: "dynamic"
+          required: true
+        - id: "dbrd_dr_3"
+          content: "What are the data retention requirements?"
+          type: "template"
+          required: true
+        - id: "dbrd_dr_4"
+          content: "Are there any data archival requirements?"
+          type: "template"
+          required: false
+        - id: "dbrd_dr_5"
+          content: "What are the data lifecycle requirements?"
+          type: "template"
+          required: false
+    
+    - id: "performance_requirements"
+      title: "Performance Requirements"
+      required: true
+      order: 3
+      description: "Database performance specifications"
+      questions:
+        - id: "dbrd_pr_1"
+          content: "What are the query response time requirements?"
+          type: "template"
+          required: true
+        - id: "dbrd_pr_2"
+          content: "What is the expected transaction volume?"
+          type: "template"
+          required: true
+        - id: "dbrd_pr_3"
+          content: "What are the concurrent user requirements?"
+          type: "template"
+          required: true
+        - id: "dbrd_pr_4"
+          content: "What are the read/write ratio expectations?"
+          type: "template"
+          required: false
+        - id: "dbrd_pr_5"
+          content: "Are there any real-time processing requirements?"
+          type: "template"
+          required: false
+    
+    - id: "security_requirements"
+      title: "Security Requirements"
+      required: true
+      order: 4
+      description: "Database security and access control"
+      questions:
+        - id: "dbrd_sr_1"
+          content: "What are the data encryption requirements?"
+          type: "template"
+          required: true
+        - id: "dbrd_sr_2"
+          content: "What are the authentication requirements?"
+          type: "template"
+          required: true
+        - id: "dbrd_sr_3"
+          content: "What are the authorization and access control requirements?"
+          type: "template"
+          required: true
+        - id: "dbrd_sr_4"
+          content: "Are there any compliance requirements? (GDPR, HIPAA, etc.)"
+          type: "template"
+          required: true
+        - id: "dbrd_sr_5"
+          content: "What are the audit logging requirements?"
+          type: "template"
+          required: true
+        - id: "dbrd_sr_6"
+          content: "How will sensitive data be protected?"
+          type: "template"
+          required: true
+    
+    - id: "availability_requirements"
+      title: "Availability and Reliability"
+      required: true
+      order: 5
+      description: "High availability and disaster recovery"
+      questions:
+        - id: "dbrd_ar_1"
+          content: "What is the required uptime? (e.g., 99.9%)"
+          type: "template"
+          required: true
+        - id: "dbrd_ar_2"
+          content: "What are the backup requirements?"
+          type: "template"
+          required: true
+        - id: "dbrd_ar_3"
+          content: "What is the recovery time objective (RTO)?"
+          type: "template"
+          required: true
+        - id: "dbrd_ar_4"
+          content: "What is the recovery point objective (RPO)?"
+          type: "template"
+          required: true
+        - id: "dbrd_ar_5"
+          content: "Is database replication required?"
+          type: "template"
+          required: false
+          options: ["Master-Slave", "Master-Master", "Multi-Master", "None"]
+        - id: "dbrd_ar_6"
+          content: "What is the disaster recovery strategy?"
+          type: "template"
+          required: true
+    
+    - id: "scalability_requirements"
+      title: "Scalability Requirements"
+      required: true
+      order: 6
+      description: "Database scaling and growth"
+      questions:
+        - id: "dbrd_sc_1"
+          content: "How should the database scale? (vertical/horizontal)"
+          type: "template"
+          required: true
+          options: ["Vertical Scaling", "Horizontal Scaling", "Both", "Sharding"]
+        - id: "dbrd_sc_2"
+          content: "What are the expected growth projections?"
+          type: "template"
+          required: true
+        - id: "dbrd_sc_3"
+          content: "Are there any partitioning requirements?"
+          type: "template"
+          required: false
+        - id: "dbrd_sc_4"
+          content: "What is the clustering strategy?"
+          type: "template"
+          required: false
+    
+    - id: "integration_requirements"
+      title: "Integration Requirements"
+      required: true
+      order: 7
+      description: "Database integration with other systems"
+      questions:
+        - id: "dbrd_ir_1"
+          content: "What applications will connect to the database?"
+          type: "template"
+          required: true
+        - id: "dbrd_ir_2"
+          content: "What are the connection pooling requirements?"
+          type: "template"
+          required: true
+        - id: "dbrd_ir_3"
+          content: "Are there any ETL/data pipeline requirements?"
+          type: "template"
+          required: false
+        - id: "dbrd_ir_4"
+          content: "What are the API/interface requirements?"
+          type: "template"
+          required: false
+        - id: "dbrd_ir_5"
+          content: "Are there any real-time synchronization needs?"
+          type: "template"
+          required: false
+    
+    - id: "monitoring_maintenance"
+      title: "Monitoring and Maintenance"
+      required: true
+      order: 8
+      description: "Database monitoring and maintenance requirements"
+      questions:
+        - id: "dbrd_mm_1"
+          content: "What database metrics need to be monitored?"
+          type: "template"
+          required: true
+        - id: "dbrd_mm_2"
+          content: "What are the alerting requirements?"
+          type: "template"
+          required: true
+        - id: "dbrd_mm_3"
+          content: "What are the maintenance window requirements?"
+          type: "template"
+          required: true
+        - id: "dbrd_mm_4"
+          content: "How will database optimization be handled?"
+          type: "template"
+          required: false
+        - id: "dbrd_mm_5"
+          content: "What are the database tuning requirements?"
+          type: "template"
+          required: false
+    
+    - id: "data_integrity"
+      title: "Data Integrity"
+      required: true
+      order: 9
+      description: "Data integrity and consistency requirements"
+      questions:
+        - id: "dbrd_di_1"
+          content: "What are the data integrity constraints?"
+          type: "template"
+          required: true
+        - id: "dbrd_di_2"
+          content: "What are the referential integrity requirements?"
+          type: "template"
+          required: true
+        - id: "dbrd_di_3"
+          content: "How will data consistency be maintained?"
+          type: "template"
+          required: true
+        - id: "dbrd_di_4"
+          content: "What are the transaction isolation requirements?"
+          type: "template"
+          required: false
+          options: ["Read Uncommitted", "Read Committed", "Repeatable Read", "Serializable"]
+        - id: "dbrd_di_5"
+          content: "Are there any data validation requirements?"
+          type: "template"
+          required: true
+    
+    - id: "compliance_governance"
+      title: "Compliance and Governance"
+      required: false
+      order: 10
+      description: "Regulatory compliance and data governance"
+      questions:
+        - id: "dbrd_cg_1"
+          content: "What regulatory compliance is required?"
+          type: "template"
+          required: false
+          options: ["GDPR", "HIPAA", "PCI-DSS", "SOX", "CCPA", "None", "Other"]
+        - id: "dbrd_cg_2"
+          content: "What are the data governance policies?"
+          type: "template"
+          required: false
+        - id: "dbrd_cg_3"
+          content: "What are the data quality requirements?"
+          type: "template"
+          required: false
+        - id: "dbrd_cg_4"
+          content: "How will data lineage be tracked?"
+          type: "template"
+          required: false
+
+# Validation rules
+validation_rules:
+  - all_required_sections_present: true
+  - minimum_questions_answered_per_section: 0.85
+  - performance_metrics_quantified: true
+  - security_requirements_comprehensive: true
+  - availability_targets_specified: true
+  - backup_strategy_defined: true
+
+# Document relationships
+relationships:
+  derives_from: ["erd", "system_architecture", "srs"]
+  informs: ["database_schema", "deployment_guide", "operations_manual"]
+  references: ["security_policies", "compliance_standards", "sla_requirements"]

@@ -1,0 +1,253 @@
+frd_template:
+  version: "1.0"
+  title: "Feature Requirements Document"
+  description: "Detailed feature specifications and requirements"
+  
+  sections:
+    - id: "feature_overview"
+      title: "Feature Overview"
+      required: true
+      order: 1
+      description: "High-level feature description and purpose"
+      questions:
+        - id: "frd_fo_1"
+          content: "What is the name of this feature?"
+          type: "template"
+          required: true
+        - id: "frd_fo_2"
+          content: "What is the primary purpose of this feature?"
+          type: "template"
+          required: true
+        - id: "frd_fo_3"
+          content: "Who are the target users for this feature?"
+          type: "template"
+          required: true
+        - id: "frd_fo_4"
+          content: "What problem does this feature solve?"
+          type: "template"
+          required: true
+    
+    - id: "user_stories"
+      title: "User Stories"
+      required: true
+      order: 2
+      description: "User stories that define the feature"
+      dynamic: true
+      template: "As a {persona}, I want to {action} so that {benefit}"
+      questions:
+        - id: "frd_us_1"
+          content: "What are the main user stories for this feature?"
+          type: "template"
+          required: true
+        - id: "frd_us_2"
+          content: "Are there any edge cases or alternative flows?"
+          type: "template"
+          required: false
+        - id: "frd_us_3"
+          content: "What are the user personas involved?"
+          type: "template"
+          required: true
+    
+    - id: "functional_requirements"
+      title: "Functional Requirements"
+      required: true
+      order: 3
+      description: "Detailed functional specifications"
+      subsections:
+        - id: "core_functionality"
+          title: "Core Functionality"
+          questions:
+            - id: "frd_cf_1"
+              content: "What are the core functions this feature must perform?"
+              type: "template"
+              required: true
+            - id: "frd_cf_2"
+              content: "What are the inputs and outputs?"
+              type: "template"
+              required: true
+            - id: "frd_cf_3"
+              content: "What are the business rules that apply?"
+              type: "template"
+              required: true
+        
+        - id: "user_interactions"
+          title: "User Interactions"
+          questions:
+            - id: "frd_ui_1"
+              content: "How will users interact with this feature?"
+              type: "template"
+              required: true
+            - id: "frd_ui_2"
+              content: "What are the key user workflows?"
+              type: "template"
+              required: true
+            - id: "frd_ui_3"
+              content: "What feedback will users receive?"
+              type: "template"
+              required: false
+    
+    - id: "acceptance_criteria"
+      title: "Acceptance Criteria"
+      required: true
+      order: 4
+      description: "Testable acceptance criteria for each user story"
+      dynamic: true
+      auto_generate: true
+      template: |
+        Given: {precondition}
+        When: {action}
+        Then: {expected_result}
+      questions:
+        - id: "frd_ac_1"
+          content: "What are the acceptance criteria for each user story?"
+          type: "template"
+          required: true
+        - id: "frd_ac_2"
+          content: "What constitutes a successful implementation?"
+          type: "template"
+          required: true
+        - id: "frd_ac_3"
+          content: "What are the validation rules?"
+          type: "template"
+          required: false
+    
+    - id: "ux_requirements"
+      title: "UX Requirements"
+      required: true
+      order: 5
+      description: "User experience requirements"
+      questions:
+        - id: "frd_ux_1"
+          content: "What are the UX/UI requirements for this feature?"
+          type: "template"
+          required: true
+        - id: "frd_ux_2"
+          content: "Are there specific design patterns to follow?"
+          type: "template"
+          required: false
+        - id: "frd_ux_3"
+          content: "What are the accessibility requirements?"
+          type: "template"
+          required: true
+        - id: "frd_ux_4"
+          content: "What are the responsive design requirements?"
+          type: "template"
+          required: false
+    
+    - id: "technical_considerations"
+      title: "Technical Considerations"
+      required: true
+      order: 6
+      description: "Technical requirements and constraints"
+      questions:
+        - id: "frd_tc_1"
+          content: "What are the technical constraints for this feature?"
+          type: "template"
+          required: false
+        - id: "frd_tc_2"
+          content: "What APIs or services will this feature use?"
+          type: "template"
+          required: false
+        - id: "frd_tc_3"
+          content: "What are the performance requirements?"
+          type: "template"
+          required: true
+        - id: "frd_tc_4"
+          content: "What are the data requirements?"
+          type: "template"
+          required: true
+    
+    - id: "dependencies"
+      title: "Dependencies"
+      required: true
+      order: 7
+      description: "Feature dependencies and integrations"
+      questions:
+        - id: "frd_dep_1"
+          content: "What other features or systems does this depend on?"
+          type: "template"
+          required: true
+        - id: "frd_dep_2"
+          content: "What features depend on this one?"
+          type: "template"
+          required: false
+        - id: "frd_dep_3"
+          content: "Are there any external dependencies?"
+          type: "template"
+          required: false
+        - id: "frd_dep_4"
+          content: "What is the impact of these dependencies?"
+          type: "dynamic"
+          required: false
+    
+    - id: "error_handling"
+      title: "Error Handling"
+      required: true
+      order: 8
+      description: "Error scenarios and handling"
+      questions:
+        - id: "frd_eh_1"
+          content: "What are the potential error scenarios?"
+          type: "template"
+          required: true
+        - id: "frd_eh_2"
+          content: "How should each error be handled?"
+          type: "dynamic"
+          required: true
+        - id: "frd_eh_3"
+          content: "What error messages should be displayed to users?"
+          type: "template"
+          required: false
+    
+    - id: "analytics_tracking"
+      title: "Analytics and Tracking"
+      required: false
+      order: 9
+      description: "Analytics requirements for the feature"
+      questions:
+        - id: "frd_at_1"
+          content: "What user actions should be tracked?"
+          type: "template"
+          required: false
+        - id: "frd_at_2"
+          content: "What metrics are important for this feature?"
+          type: "template"
+          required: false
+        - id: "frd_at_3"
+          content: "What events should trigger notifications?"
+          type: "template"
+          required: false
+    
+    - id: "rollout_strategy"
+      title: "Rollout Strategy"
+      required: false
+      order: 10
+      description: "Feature rollout and deployment strategy"
+      questions:
+        - id: "frd_rs_1"
+          content: "How will this feature be rolled out?"
+          type: "template"
+          required: false
+          options: ["All at once", "Phased rollout", "Beta testing", "A/B testing"]
+        - id: "frd_rs_2"
+          content: "Are there feature flags required?"
+          type: "template"
+          required: false
+        - id: "frd_rs_3"
+          content: "What is the rollback plan?"
+          type: "template"
+          required: false
+
+# Validation rules
+validation_rules:
+  - all_required_sections_present: true
+  - minimum_questions_answered_per_section: 0.8
+  - user_stories_minimum: 1
+  - acceptance_criteria_coverage: 1.0
+  - error_scenarios_defined: true
+
+# Document relationships
+relationships:
+  derives_from: ["prd", "brd", "user_research"]
+  informs: ["technical_spec", "test_plan", "uxdd"]
+  references: ["design_system", "api_documentation"]

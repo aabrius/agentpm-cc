@@ -1,0 +1,357 @@
+srs_template:
+  version: "1.0"
+  title: "Software Requirements Specification"
+  description: "Comprehensive software requirements following IEEE 29148 standard"
+  
+  sections:
+    - id: "introduction"
+      title: "Introduction"
+      required: true
+      order: 1
+      description: "Purpose, scope, and overview of the system"
+      questions:
+        - id: "srs_intro_1"
+          content: "What is the purpose of this software system?"
+          type: "template"
+          required: true
+        - id: "srs_intro_2"
+          content: "What is the scope of the system?"
+          type: "template"
+          required: true
+        - id: "srs_intro_3"
+          content: "What are the key objectives?"
+          type: "template"
+          required: true
+        - id: "srs_intro_4"
+          content: "Who is the intended audience for this system?"
+          type: "template"
+          required: true
+    
+    - id: "system_overview"
+      title: "System Overview"
+      required: true
+      order: 2
+      description: "High-level system architecture and context"
+      questions:
+        - id: "srs_so_1"
+          content: "What type of system architecture will be used? (monolithic, microservices, serverless, etc.)"
+          type: "template"
+          required: true
+          options: ["Monolithic", "Microservices", "Serverless", "Service-Oriented", "Event-Driven", "Hybrid"]
+        - id: "srs_so_2"
+          content: "What are the major system components?"
+          type: "template"
+          required: true
+        - id: "srs_so_3"
+          content: "How will components interact with each other?"
+          type: "template"
+          required: true
+        - id: "srs_so_4"
+          content: "What external systems will it integrate with?"
+          type: "template"
+          required: false
+    
+    - id: "functional_requirements"
+      title: "Functional Requirements"
+      required: true
+      order: 3
+      description: "Detailed functional specifications"
+      subsections:
+        - id: "user_management"
+          title: "User Management"
+          questions:
+            - id: "srs_um_1"
+              content: "What are the user authentication requirements?"
+              type: "template"
+              required: true
+            - id: "srs_um_2"
+              content: "What user roles and permissions are needed?"
+              type: "template"
+              required: true
+            - id: "srs_um_3"
+              content: "How will user sessions be managed?"
+              type: "template"
+              required: true
+        
+        - id: "core_features"
+          title: "Core Features"
+          questions:
+            - id: "srs_cf_1"
+              content: "What are the core system features?"
+              type: "template"
+              required: true
+            - id: "srs_cf_2"
+              content: "What are the input/output requirements for each feature?"
+              type: "dynamic"
+              required: true
+            - id: "srs_cf_3"
+              content: "What are the processing requirements?"
+              type: "template"
+              required: true
+        
+        - id: "data_management"
+          title: "Data Management"
+          questions:
+            - id: "srs_dm_1"
+              content: "What are the data storage requirements?"
+              type: "template"
+              required: true
+            - id: "srs_dm_2"
+              content: "What are the data validation rules?"
+              type: "template"
+              required: true
+            - id: "srs_dm_3"
+              content: "What are the data retention policies?"
+              type: "template"
+              required: false
+    
+    - id: "non_functional_requirements"
+      title: "Non-Functional Requirements"
+      required: true
+      order: 4
+      description: "Quality attributes and constraints"
+      subsections:
+        - id: "performance"
+          title: "Performance Requirements"
+          questions:
+            - id: "srs_perf_1"
+              content: "What are the response time requirements?"
+              type: "template"
+              required: true
+            - id: "srs_perf_2"
+              content: "What is the expected system throughput?"
+              type: "template"
+              required: true
+            - id: "srs_perf_3"
+              content: "What are the concurrent user requirements?"
+              type: "template"
+              required: true
+            - id: "srs_perf_4"
+              content: "What are the resource utilization constraints?"
+              type: "template"
+              required: false
+        
+        - id: "security"
+          title: "Security Requirements"
+          questions:
+            - id: "srs_sec_1"
+              content: "What are the authentication mechanisms?"
+              type: "template"
+              required: true
+            - id: "srs_sec_2"
+              content: "What data needs to be encrypted?"
+              type: "template"
+              required: true
+            - id: "srs_sec_3"
+              content: "What are the authorization requirements?"
+              type: "template"
+              required: true
+            - id: "srs_sec_4"
+              content: "What security standards must be followed?"
+              type: "template"
+              required: false
+        
+        - id: "reliability"
+          title: "Reliability Requirements"
+          questions:
+            - id: "srs_rel_1"
+              content: "What is the required system availability? (e.g., 99.9%)"
+              type: "template"
+              required: true
+            - id: "srs_rel_2"
+              content: "What is the mean time between failures (MTBF)?"
+              type: "template"
+              required: false
+            - id: "srs_rel_3"
+              content: "What is the mean time to recovery (MTTR)?"
+              type: "template"
+              required: false
+            - id: "srs_rel_4"
+              content: "What are the backup and recovery requirements?"
+              type: "template"
+              required: true
+        
+        - id: "scalability"
+          title: "Scalability Requirements"
+          questions:
+            - id: "srs_scale_1"
+              content: "How should the system scale? (vertical/horizontal)"
+              type: "template"
+              required: true
+              options: ["Vertical Scaling", "Horizontal Scaling", "Both", "Auto-scaling"]
+            - id: "srs_scale_2"
+              content: "What are the expected growth projections?"
+              type: "template"
+              required: true
+            - id: "srs_scale_3"
+              content: "What are the scalability limits?"
+              type: "template"
+              required: false
+    
+    - id: "interface_requirements"
+      title: "Interface Requirements"
+      required: true
+      order: 5
+      description: "User, hardware, software, and communication interfaces"
+      subsections:
+        - id: "user_interfaces"
+          title: "User Interfaces"
+          questions:
+            - id: "srs_ui_1"
+              content: "What user interfaces will be provided?"
+              type: "template"
+              required: true
+            - id: "srs_ui_2"
+              content: "What are the UI standards and guidelines?"
+              type: "template"
+              required: true
+            - id: "srs_ui_3"
+              content: "What browsers/devices must be supported?"
+              type: "template"
+              required: true
+        
+        - id: "api_interfaces"
+          title: "API Interfaces"
+          questions:
+            - id: "srs_api_1"
+              content: "What APIs will the system expose?"
+              type: "template"
+              required: true
+            - id: "srs_api_2"
+              content: "What API protocols will be used? (REST, GraphQL, gRPC, etc.)"
+              type: "template"
+              required: true
+              options: ["REST", "GraphQL", "gRPC", "SOAP", "WebSocket"]
+            - id: "srs_api_3"
+              content: "What are the API authentication requirements?"
+              type: "template"
+              required: true
+        
+        - id: "external_interfaces"
+          title: "External Interfaces"
+          questions:
+            - id: "srs_ext_1"
+              content: "What external systems will be integrated?"
+              type: "template"
+              required: false
+            - id: "srs_ext_2"
+              content: "What are the integration protocols?"
+              type: "dynamic"
+              required: false
+            - id: "srs_ext_3"
+              content: "What are the data exchange formats?"
+              type: "template"
+              required: false
+    
+    - id: "technology_stack"
+      title: "Technology Stack"
+      required: true
+      order: 6
+      description: "Technologies, frameworks, and tools"
+      questions:
+        - id: "srs_tech_1"
+          content: "What programming languages will be used?"
+          type: "template"
+          required: true
+        - id: "srs_tech_2"
+          content: "What frameworks and libraries will be used?"
+          type: "template"
+          required: true
+        - id: "srs_tech_3"
+          content: "What database systems will be used?"
+          type: "template"
+          required: true
+        - id: "srs_tech_4"
+          content: "What cloud/infrastructure platform will be used?"
+          type: "template"
+          required: false
+          options: ["AWS", "Google Cloud", "Azure", "On-premise", "Hybrid", "Other"]
+        - id: "srs_tech_5"
+          content: "What development tools are required?"
+          type: "template"
+          required: false
+    
+    - id: "constraints"
+      title: "Design Constraints"
+      required: true
+      order: 7
+      description: "Technical and business constraints"
+      questions:
+        - id: "srs_con_1"
+          content: "What are the technical constraints?"
+          type: "template"
+          required: true
+        - id: "srs_con_2"
+          content: "What are the regulatory/compliance constraints?"
+          type: "template"
+          required: false
+        - id: "srs_con_3"
+          content: "What are the budget constraints?"
+          type: "template"
+          required: false
+        - id: "srs_con_4"
+          content: "What are the timeline constraints?"
+          type: "template"
+          required: false
+    
+    - id: "testing_requirements"
+      title: "Testing Requirements"
+      required: true
+      order: 8
+      description: "Testing strategies and requirements"
+      questions:
+        - id: "srs_test_1"
+          content: "What types of testing will be performed?"
+          type: "template"
+          required: true
+          options: ["Unit Testing", "Integration Testing", "System Testing", "Performance Testing", "Security Testing", "User Acceptance Testing", "All of the above"]
+        - id: "srs_test_2"
+          content: "What is the minimum test coverage required?"
+          type: "template"
+          required: true
+        - id: "srs_test_3"
+          content: "What are the testing tools and frameworks?"
+          type: "template"
+          required: false
+        - id: "srs_test_4"
+          content: "What are the acceptance criteria for testing?"
+          type: "template"
+          required: true
+    
+    - id: "deployment_requirements"
+      title: "Deployment Requirements"
+      required: true
+      order: 9
+      description: "Deployment and operational requirements"
+      questions:
+        - id: "srs_dep_1"
+          content: "What is the deployment strategy?"
+          type: "template"
+          required: true
+          options: ["Blue-Green", "Canary", "Rolling", "Recreate", "A/B Testing"]
+        - id: "srs_dep_2"
+          content: "What environments are needed? (dev, staging, prod)"
+          type: "template"
+          required: true
+        - id: "srs_dep_3"
+          content: "What are the CI/CD requirements?"
+          type: "template"
+          required: true
+        - id: "srs_dep_4"
+          content: "What monitoring and logging is required?"
+          type: "template"
+          required: true
+
+# Validation rules
+validation_rules:
+  - all_required_sections_present: true
+  - minimum_questions_answered_per_section: 0.85
+  - performance_metrics_quantified: true
+  - security_requirements_comprehensive: true
+  - interfaces_fully_specified: true
+
+# Document relationships
+relationships:
+  derives_from: ["prd", "brd", "system_architecture"]
+  informs: ["technical_spec", "test_plan", "deployment_guide"]
+  references: ["api_documentation", "security_standards", "compliance_requirements"]

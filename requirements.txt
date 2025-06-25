@@ -1,0 +1,38 @@
+# Core dependencies
+fastapi==0.110.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+websockets==12.0
+
+# LLM and AI
+langchain==0.1.0
+langgraph==0.0.20
+anthropic==0.21.0
+openai==1.12.0
+langfuse==2.46.0
+
+# Database
+asyncpg==0.29.0
+sqlalchemy==2.0.25
+pgvector==0.2.4
+alembic==1.13.1
+
+# Redis
+redis==5.0.1
+
+# Vector Store
+pinecone-client==2.0.0
+
+# Data validation and serialization
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Utils
+pyyaml==6.0.1
+python-dotenv==1.0.0
+structlog==24.1.0
+
+# Development
+pytest==7.4.4
+pytest-asyncio==0.23.3
+httpx==0.26.0

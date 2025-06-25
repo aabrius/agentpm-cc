@@ -1,0 +1,256 @@
+erd_template:
+  version: "1.0"
+  title: "Entity Relationship Diagram"
+  description: "Data model design and entity relationships"
+  
+  sections:
+    - id: "overview"
+      title: "Data Model Overview"
+      required: true
+      order: 1
+      description: "High-level overview of the data model"
+      questions:
+        - id: "erd_ov_1"
+          content: "What is the primary purpose of this data model?"
+          type: "template"
+          required: true
+        - id: "erd_ov_2"
+          content: "What database system will be used?"
+          type: "template"
+          required: true
+          options: ["PostgreSQL", "MySQL", "MongoDB", "SQL Server", "Oracle", "DynamoDB", "Cassandra", "Other"]
+        - id: "erd_ov_3"
+          content: "What is the expected data volume?"
+          type: "template"
+          required: false
+        - id: "erd_ov_4"
+          content: "Are there any specific data modeling standards to follow?"
+          type: "template"
+          required: false
+    
+    - id: "entities"
+      title: "Entities"
+      required: true
+      order: 2
+      description: "Definition of all entities in the system"
+      dynamic: true
+      questions:
+        - id: "erd_ent_1"
+          content: "What are the main entities in the system?"
+          type: "template"
+          required: true
+        - id: "erd_ent_2"
+          content: "For each entity, what is its purpose?"
+          type: "dynamic"
+          required: true
+        - id: "erd_ent_3"
+          content: "Which entities are core vs. supporting?"
+          type: "template"
+          required: false
+        - id: "erd_ent_4"
+          content: "Are there any entity naming conventions?"
+          type: "template"
+          required: false
+    
+    - id: "attributes"
+      title: "Entity Attributes"
+      required: true
+      order: 3
+      description: "Attributes for each entity"
+      dynamic: true
+      questions:
+        - id: "erd_attr_1"
+          content: "What are the key attributes for each entity?"
+          type: "dynamic"
+          required: true
+        - id: "erd_attr_2"
+          content: "What is the primary key for each entity?"
+          type: "dynamic"
+          required: true
+        - id: "erd_attr_3"
+          content: "Are there any unique constraints?"
+          type: "dynamic"
+          required: false
+        - id: "erd_attr_4"
+          content: "What are the data types for each attribute?"
+          type: "dynamic"
+          required: true
+        - id: "erd_attr_5"
+          content: "Which attributes are required vs. optional?"
+          type: "dynamic"
+          required: true
+    
+    - id: "relationships"
+      title: "Entity Relationships"
+      required: true
+      order: 4
+      description: "Relationships between entities"
+      dynamic: true
+      questions:
+        - id: "erd_rel_1"
+          content: "What are the relationships between entities?"
+          type: "template"
+          required: true
+        - id: "erd_rel_2"
+          content: "What is the cardinality of each relationship? (1:1, 1:N, M:N)"
+          type: "dynamic"
+          required: true
+        - id: "erd_rel_3"
+          content: "Are relationships mandatory or optional?"
+          type: "dynamic"
+          required: true
+        - id: "erd_rel_4"
+          content: "What are the foreign key constraints?"
+          type: "dynamic"
+          required: true
+        - id: "erd_rel_5"
+          content: "Are there any cascading rules? (delete, update)"
+          type: "dynamic"
+          required: false
+    
+    - id: "business_rules"
+      title: "Business Rules"
+      required: true
+      order: 5
+      description: "Business rules affecting the data model"
+      questions:
+        - id: "erd_br_1"
+          content: "What business rules affect the data model?"
+          type: "template"
+          required: true
+        - id: "erd_br_2"
+          content: "Are there any data validation rules?"
+          type: "template"
+          required: true
+        - id: "erd_br_3"
+          content: "What are the data integrity constraints?"
+          type: "template"
+          required: true
+        - id: "erd_br_4"
+          content: "Are there any computed or derived attributes?"
+          type: "template"
+          required: false
+    
+    - id: "indexes"
+      title: "Indexing Strategy"
+      required: true
+      order: 6
+      description: "Database indexing for performance"
+      questions:
+        - id: "erd_idx_1"
+          content: "Besides primary keys, what indexes are needed?"
+          type: "template"
+          required: true
+        - id: "erd_idx_2"
+          content: "What are the most common query patterns?"
+          type: "template"
+          required: true
+        - id: "erd_idx_3"
+          content: "Are there any composite indexes needed?"
+          type: "template"
+          required: false
+        - id: "erd_idx_4"
+          content: "Are there any full-text search requirements?"
+          type: "template"
+          required: false
+    
+    - id: "normalization"
+      title: "Normalization"
+      required: true
+      order: 7
+      description: "Database normalization considerations"
+      questions:
+        - id: "erd_norm_1"
+          content: "What level of normalization is required? (1NF, 2NF, 3NF, BCNF)"
+          type: "template"
+          required: true
+          options: ["1NF", "2NF", "3NF", "BCNF", "4NF", "5NF", "Denormalized"]
+        - id: "erd_norm_2"
+          content: "Are there any intentional denormalizations for performance?"
+          type: "template"
+          required: false
+        - id: "erd_norm_3"
+          content: "How will data redundancy be handled?"
+          type: "template"
+          required: false
+    
+    - id: "audit_versioning"
+      title: "Audit and Versioning"
+      required: false
+      order: 8
+      description: "Audit trails and data versioning"
+      questions:
+        - id: "erd_av_1"
+          content: "Which entities require audit trails?"
+          type: "template"
+          required: false
+        - id: "erd_av_2"
+          content: "What audit information needs to be captured?"
+          type: "template"
+          required: false
+          options: ["Created By/At", "Modified By/At", "All Changes", "Specific Fields Only"]
+        - id: "erd_av_3"
+          content: "Is data versioning required?"
+          type: "template"
+          required: false
+        - id: "erd_av_4"
+          content: "How long should audit data be retained?"
+          type: "template"
+          required: false
+    
+    - id: "partitioning"
+      title: "Data Partitioning"
+      required: false
+      order: 9
+      description: "Data partitioning strategy"
+      questions:
+        - id: "erd_part_1"
+          content: "Is data partitioning required?"
+          type: "template"
+          required: false
+        - id: "erd_part_2"
+          content: "What is the partitioning strategy? (range, list, hash)"
+          type: "template"
+          required: false
+          options: ["Range Partitioning", "List Partitioning", "Hash Partitioning", "Composite Partitioning", "Not Required"]
+        - id: "erd_part_3"
+          content: "What is the partition key?"
+          type: "template"
+          required: false
+    
+    - id: "migration"
+      title: "Data Migration"
+      required: false
+      order: 10
+      description: "Data migration from existing systems"
+      questions:
+        - id: "erd_mig_1"
+          content: "Is data migration from existing systems required?"
+          type: "template"
+          required: false
+        - id: "erd_mig_2"
+          content: "What is the source data structure?"
+          type: "template"
+          required: false
+        - id: "erd_mig_3"
+          content: "What data transformations are needed?"
+          type: "template"
+          required: false
+        - id: "erd_mig_4"
+          content: "What is the migration strategy?"
+          type: "template"
+          required: false
+
+# Validation rules
+validation_rules:
+  - all_required_sections_present: true
+  - minimum_questions_answered_per_section: 0.9
+  - primary_keys_defined: true
+  - relationships_fully_specified: true
+  - data_types_specified: true
+
+# Document relationships
+relationships:
+  derives_from: ["business_requirements", "domain_model", "use_cases"]
+  informs: ["dbrd", "database_schema", "data_migration_plan"]
+  references: ["data_dictionary", "business_glossary"]

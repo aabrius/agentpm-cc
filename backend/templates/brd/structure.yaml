@@ -1,0 +1,255 @@
+brd_template:
+  version: "1.0"
+  title: "Business Requirements Document"
+  description: "Comprehensive business requirements following industry standards"
+  
+  sections:
+    - id: "executive_summary"
+      title: "Executive Summary"
+      required: true
+      order: 1
+      description: "High-level business overview and objectives"
+      questions:
+        - id: "brd_es_1"
+          content: "What is the primary business need or opportunity?"
+          type: "template"
+          required: true
+        - id: "brd_es_2"
+          content: "What are the key business objectives?"
+          type: "template"
+          required: true
+        - id: "brd_es_3"
+          content: "What is the expected business impact?"
+          type: "template"
+          required: true
+        - id: "brd_es_4"
+          content: "What is the target timeline for implementation?"
+          type: "template"
+          required: false
+    
+    - id: "business_objectives"
+      title: "Business Objectives"
+      required: true
+      order: 2
+      description: "Detailed business goals and success criteria"
+      questions:
+        - id: "brd_bo_1"
+          content: "What are the specific, measurable business goals?"
+          type: "template"
+          required: true
+        - id: "brd_bo_2"
+          content: "How will success be measured?"
+          type: "template"
+          required: true
+        - id: "brd_bo_3"
+          content: "What are the key performance indicators (KPIs)?"
+          type: "template"
+          required: true
+        - id: "brd_bo_4"
+          content: "What is the expected return on investment (ROI)?"
+          type: "template"
+          required: false
+    
+    - id: "stakeholder_analysis"
+      title: "Stakeholder Analysis"
+      required: true
+      order: 3
+      description: "Identification and analysis of key stakeholders"
+      questions:
+        - id: "brd_sa_1"
+          content: "Who are the primary stakeholders?"
+          type: "template"
+          required: true
+        - id: "brd_sa_2"
+          content: "What are the stakeholder needs and expectations?"
+          type: "template"
+          required: true
+        - id: "brd_sa_3"
+          content: "How will stakeholders be involved in the project?"
+          type: "template"
+          required: false
+        - id: "brd_sa_4"
+          content: "What are the communication requirements for stakeholders?"
+          type: "template"
+          required: false
+    
+    - id: "current_state_analysis"
+      title: "Current State Analysis"
+      required: true
+      order: 4
+      description: "Analysis of existing processes and systems"
+      questions:
+        - id: "brd_csa_1"
+          content: "What are the current business processes?"
+          type: "template"
+          required: true
+        - id: "brd_csa_2"
+          content: "What are the pain points in the current state?"
+          type: "template"
+          required: true
+        - id: "brd_csa_3"
+          content: "What systems or tools are currently in use?"
+          type: "template"
+          required: false
+        - id: "brd_csa_4"
+          content: "What are the limitations of the current approach?"
+          type: "template"
+          required: true
+    
+    - id: "future_state_vision"
+      title: "Future State Vision"
+      required: true
+      order: 5
+      description: "Desired future state and improvements"
+      questions:
+        - id: "brd_fsv_1"
+          content: "What does the ideal future state look like?"
+          type: "template"
+          required: true
+        - id: "brd_fsv_2"
+          content: "What are the key improvements expected?"
+          type: "template"
+          required: true
+        - id: "brd_fsv_3"
+          content: "How will processes change?"
+          type: "template"
+          required: true
+        - id: "brd_fsv_4"
+          content: "What new capabilities will be enabled?"
+          type: "template"
+          required: false
+    
+    - id: "gap_analysis"
+      title: "Gap Analysis"
+      required: true
+      order: 6
+      description: "Identifying gaps between current and future state"
+      questions:
+        - id: "brd_ga_1"
+          content: "What are the key gaps between current and future state?"
+          type: "template"
+          required: true
+        - id: "brd_ga_2"
+          content: "What resources are needed to bridge these gaps?"
+          type: "template"
+          required: true
+        - id: "brd_ga_3"
+          content: "What are the technical gaps that need to be addressed?"
+          type: "template"
+          required: false
+        - id: "brd_ga_4"
+          content: "What are the process gaps?"
+          type: "template"
+          required: false
+    
+    - id: "business_requirements"
+      title: "Business Requirements"
+      required: true
+      order: 7
+      description: "Detailed business requirements"
+      subsections:
+        - id: "functional_requirements"
+          title: "Functional Business Requirements"
+          questions:
+            - id: "brd_br_1"
+              content: "What business functions must the solution support?"
+              type: "template"
+              required: true
+            - id: "brd_br_2"
+              content: "What are the critical business rules?"
+              type: "template"
+              required: true
+            - id: "brd_br_3"
+              content: "What reporting and analytics are required?"
+              type: "template"
+              required: false
+        
+        - id: "non_functional_requirements"
+          title: "Non-Functional Business Requirements"
+          questions:
+            - id: "brd_nfr_1"
+              content: "What are the compliance and regulatory requirements?"
+              type: "template"
+              required: false
+            - id: "brd_nfr_2"
+              content: "What are the data privacy and security requirements?"
+              type: "template"
+              required: true
+            - id: "brd_nfr_3"
+              content: "What are the availability requirements?"
+              type: "template"
+              required: false
+    
+    - id: "constraints_assumptions"
+      title: "Constraints and Assumptions"
+      required: false
+      order: 8
+      description: "Project constraints and key assumptions"
+      questions:
+        - id: "brd_ca_1"
+          content: "What are the budget constraints?"
+          type: "template"
+          required: false
+        - id: "brd_ca_2"
+          content: "What are the timeline constraints?"
+          type: "template"
+          required: false
+        - id: "brd_ca_3"
+          content: "What are the key assumptions being made?"
+          type: "template"
+          required: false
+        - id: "brd_ca_4"
+          content: "What are the resource constraints?"
+          type: "template"
+          required: false
+    
+    - id: "risk_analysis"
+      title: "Risk Analysis"
+      required: false
+      order: 9
+      description: "Business risks and mitigation strategies"
+      questions:
+        - id: "brd_ra_1"
+          content: "What are the main business risks?"
+          type: "template"
+          required: false
+        - id: "brd_ra_2"
+          content: "What is the impact of each risk?"
+          type: "dynamic"
+          required: false
+        - id: "brd_ra_3"
+          content: "What are the mitigation strategies?"
+          type: "dynamic"
+          required: false
+    
+    - id: "success_criteria"
+      title: "Success Criteria"
+      required: true
+      order: 10
+      description: "Criteria for measuring project success"
+      questions:
+        - id: "brd_sc_1"
+          content: "What defines success for this project?"
+          type: "template"
+          required: true
+        - id: "brd_sc_2"
+          content: "What are the acceptance criteria?"
+          type: "template"
+          required: true
+        - id: "brd_sc_3"
+          content: "How will benefits be realized and measured?"
+          type: "template"
+          required: false
+
+# Validation rules
+validation_rules:
+  - all_required_sections_present: true
+  - minimum_questions_answered_per_section: 0.75
+  - business_objectives_quantifiable: true
+  - success_criteria_measurable: true
+
+# Document relationships
+relationships:
+  derives_from: ["vision_document", "market_analysis"]
+  informs: ["prd", "frd", "project_plan", "test_plan"]
+  references: ["stakeholder_register", "risk_register"]
